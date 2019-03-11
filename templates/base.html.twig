@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/revolution-slider.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    {% endblock %}
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="asset('css/responsive.css')" rel="stylesheet">
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Main Header-->
+    <header class="main-header">
+
+        <div class="header-top">
+            <div class="auto-container clearfix">
+                <!--Top Left-->
+                <div class="top-left pull-left">
+                    <div class="social-links">
+                        <a href="#"><span class="fa fa-facebook-f"></span></a>
+                        <a href="#"><span class="fa fa-twitter"></span></a>
+                        <a href="#"><span class="fa fa-linkedin"></span></a>
+                        <a href="#"><span class="fa fa-instagram"></span></a>
+                        <a href="#"><span class="fa fa-vimeo"></span></a>
+                    </div>
+                </div>
+
+                <!--Top Right-->
+                <div class="top-right pull-right">
+                    <!--Links Nav-->
+
+                </div>
+            </div>
+        </div>
+
+        <!--Header-Upper-->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="clearfix">
+
+                    <div class="pull-left logo-outer">
+                        <div class="logo"><a href="{{ path('accueil') }}"><img src="images/logo.png" alt="" title="Dahom"></a></div>
+                    </div>
+
+                    <div class="pull-right upper-right clearfix">
+
+
+
+                        <!--Info Box-->
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-technology-1"></span></div>
+                            Contact
+                            <div class="light-text">+33 6 51 58 89 36</div>
+                        </div>
+
+                        <!--Info Box-->
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-envelope-3"></span></div>
+                            E mail
+                            <div class="light-text">adom@support.com</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Header-Lower-->
+        <div class="header-lower">
+
+            <div class="auto-container">
+                <div class="nav-outer clearfix">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class=""><a href="{{ path('accueil') }}">Accueil</a> </li>
+
+                                <li class=""><a href="{{ path('presentation') }}"> Dahom</a>
+                                    <ul>
+                                        <li><a href="about-us.html">Présentation</a></li>
+                                        <li><a href="about-us.html">Nos agent de sécurité </a></li>
+                                        <!-- <li><a href="about-us.html">Nos engagements</a></li>-->
+                                        </li>
+                                    </ul>
+
+                                <li class=""><a href="{{ path ('prestations') }}">Services</a>
+                                    <ul>
+                                        <li><a href="services.html">Agent de sécurité</a></li>
+                                        <li><a href="services.html">Agent de sécurité incendie</a></li>
+                                        <li><a href="services.html">Agent de cynophile (maître chien) </a></li>
+                                        <li><a href="services.html">Agent de protection rapprochée</a></li>
+                                        <li><a href="services.html">Les options</a></li>
+                                        <li><a href="services.html">Télésurveillance</a></li>
+                                        <li><a href="services.html">Audit & conseil</a></li>
+                                    </ul>
+                                </li>
+
+                                <!--<li class="dropdown"><a href="#">Actualité</a>
+                                	<ul>
+                                        <li><a href="services.html">Notre Actualité</a></li>
+                                        <li><a href="services-single.html">Profession </a></li>
+                                    </ul>
+                                </li>-->
+
+                                <li class=""><a href="{{ path ('legislation') }}">Réglementation</a>
+                                    <ul>
+                                        <li><a href="">Cadre Réglementaire</a></li>
+                                        <li><a href="">Convention & Accords collectifs </a></li>
+                                    </ul>
+                                </li>
+
+                                <li class=""><a href="{{ path ('embauche') }}">Recrutement</a></li>
+
+
+                                <li class=""><a href="{{ path ('adresse') }}">Contact </a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- Main Menu End-->
+
+                </div>
+            </div>
+        </div>
+
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="index.html" class="img-responsive"><img src="images/logo-small.png" alt="Bristol"></a>
+                </div>
+
+                <!--Right Col-->
+                <div class="right-col pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class=""><a href="{{ path('accueil') }}">Accueil</a> </li>
+
+                                <li class=""><a href="{{ path('presentation') }}"> Dahom</a>
+
+                                    <ul>
+                                        <li><a href="about-us.html">Présentation</a></li>
+                                        <li><a href="about-us.html">Nos agent de sécurité </a></li>
+                                        <!--<li><a href="about-us.html">Nos engagements</a></li>-->
+
+                                    </ul>
+                                </li>
+
+                                <li class=""><a href="{{ path ('prestations') }}">Services</a>
+                                    <ul>
+                                        <li><a href="{{ path ('prestations') }}">Agent de sécurité </a></li>
+                                        <li><a href="services.html">Agent de sécurité Incendie </a></li>
+                                        <li><a href="services.html">Agent de cynophile (Maître chien) </a></li>
+                                        <li><a href="services.html">Agent de protection Rapprochée </a></li>
+                                        <li><a href="services.html">Les Options </a></li>
+                                        <li><a href="services.html">Télésurveillance </a></li>
+                                        <li><a href="services.htmll">Audit& Conseil </a></li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="dropdown"><a href="#">Actualité</a>
+                                     <ul>
+                                         <li><a href="services.html">Notre Actualité</a></li>
+                                         <li><a href="services-single.html">Profession </a></li>
+                                     </ul>
+                                 </li>-->
+
+                                <li class=""><a href="{{ path ('legislation') }}">Réglementation</a>
+                                    <ul>
+                                        <li><a href="">Cadre réglementaire</a></li>
+                                        <li><a href="">Convention & accords collectifs </a></li>
+                                    </ul>
+                                </li>
+
+                                <li class=""><a href="{{ path ('embauche') }}">Recrutement</a></li>
+
+                                <li class=""><a href="{{ path ('adresse') }}">Contact</a></li>
+
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->
+                </div>
+
+            </div>
+        </div>
+        <!--End Sticky Header-->
+
+    </header>
+    <!--End Main Header -->
+    {% block body %}{% endblock %}
+
+
+
+    <!--Main Footer-->
+    <footer class="main-footer">
+
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!--Big Column-->
+                <div class="big-column col-md-5 col-sm-12 col-xs-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column / About Widget-->
+                        <div class="footer-column col-md-7 col-sm-6 col-xs-12">
+                            <div class="footer-widget about-widget">
+                                <h2>Dahom</h2>
+                                <div>
+                                    <ul>
+                                        <li><a href="index.html">Présentation</a></li>
+                                        <li><a href="index-2.html">Nos agent de sécurité </a></li>
+                                        <li><a href="index-3.html">Nos engagements</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Footer Column / Links Widget-->
+                        <div class="footer-column col-md-5 col-sm-6 col-xs-12">
+                            <div class="footer-widget links-widget">
+                                <h2>S'informer</h2>
+                                <div class="widget-content">
+                                    <ul class="list">
+                                        <li><a href="#">Comment ça marche </a></li>
+                                        <li><a href="#">Evaluez vos besoins </a></li>
+                                        <li><a href="#">Témoignages</a></li>
+                                        <li><a href="#">Actualités</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Big Column-->
+                <div class="big-column col-md-7 col-sm-12 col-xs-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column / Twitter Widget-->
+                        <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-widget twitter-widget">
+                                <h2>A Savoir</h2>
+                                <div class="widget-content">
+                                    <ul class="list">
+                                        <li><a href="#">Comment ça marche </a></li>
+                                        <li><a href="#">Evaluez vos besoins </a></li>
+                                        <li><a href="#">Témoignages</a></li>
+                                        <li><a href="#">Actualités</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--Footer Column / Contact Widget-->
+                        <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-widget contact-widget">
+                                <h2>Nous contacter </h2>
+                                <div class="widget-content">
+                                    <form method="post" action="contact.html">
+
+                                        <!--Form Group-->
+                                        <div class="form-group">
+                                            <div class="group-inner">
+                                                <input type="text" name="username" placeholder="Nom" required="">
+                                            </div>
+                                            <div class="group-inner">
+                                                <input type="email" name="email" placeholder="Email" required="">
+                                            </div>
+                                            <div class="group-inner">
+                                                <button type="submit" class="theme-btn btn-style-one">Envoyer </button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                    <!--Social Icon One-->
+                                    <ul class="social-icon-one">
+                                        <li><a class="fa fa-facebook" href="#"></a></li>
+                                        <li><a class="fa fa-twitter" href="#"></a></li>
+                                        <li><a class="fa fa-linkedin" href="#"></a></li>
+                                        <li><a class="fa fa-instagram" href="#"></a></li>
+                                        <li><a class="fa fa-vimeo" href="#"></a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="row clearfix">
+
+                    <!--column-->
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="copyright">Dahom, inc. All rights reserved.</div>
+                    </div>
+                    <!--column-->
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#"> Conditions générales </a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target=".main-header"><span class="fa fa-long-arrow-up"></span></div>
+
+{% block javascripts %}
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/revolution.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/script.js"></script>
+{% endblock %}
+</body>
+</html>

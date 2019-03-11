@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="auto-container">
+        <div class="inner-box">
+            <h1>Nous contacter </h1>
+            <!--<div class="bread-crumb"> <a href="index.html">Home &nbsp; /</a> <a class="current">CONTACT US</a></div>--->
+        </div>
+    </div>
+    </section>
+    </br>
+
+    <!--End Page Title-->
+
+    <!--Map Section-->
+    <section class="map-section">
+        <!--Map Container-->
+        <div class="map-outer">
+            <!--Map Canvas-->
+            <div class="map-canvas"
+                 data-zoom="14"
+                 data-lat="-37.817085"
+                 data-lng="144.955631"
+                 data-type="roadmap"
+                 data-hue="#ffc400"
+                 data-title="Envato"
+                 data-content="Melbourne VIC 3000, Australia<br><a href='mailto:contact@dahom.fr'></a>"
+                 style="height: 450px;">
+            </div>
+
+        </div>
+    </section>
+    <!--End Map Section-->
+
+    <!--Info Section-->
+    <section class="info-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Info Block-->
+                <div class="info-block col-md-4 col-sm-6 col-xs-12">
+                    <h2>Notre adresse </h2>
+                    <div class="inner-box">
+                        <div class="icon-box"><span class="flaticon-map"></span></div>
+                        <div class="text">DAHOM PROTECTION ET SERVICE 30 RUE PIERRE BRASSEUR <br> 77100 Meaux, France</div>
+                    </div>
+                </div>
+
+                <!--Info Block-->
+                <div class="info-block col-md-4 col-sm-6 col-xs-12">
+                    <h2>Contact </h2>
+                    <div class="inner-box">
+                        <div class="icon-box"><span class="flaticon-envelope"></span></div>
+                        <div class="text">support@bristolsecurity.com <br>(+33) 6 51 58 89 36 </div>
+                    </div>
+                </div>
+
+                <!--Info Block-->
+                <div class="info-block col-md-4 col-sm-6 col-xs-12">
+                    <h2>Horaires d'ouverture</h2>
+                    <div class="inner-box">
+                        <div class="icon-box"><span class="flaticon-map"></span></div>
+                        <div class="text">Lundi-Vendredi: 09h à 19h
+                            Samedi: 09h à 14h
+                            <br>  Dimanche: Fermé</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--End Info Section-->
+
+    <!--Contact Form-->
+    <div class="contact-form-section">
+        <div class="auto-container">
+
+            <!-- contact Form -->
+            <div class="contact-form">
+
+                <div class="group-title"><h2>Envoyez nous un message</h2></div>
+
+                <!--Comment Form-->
+                <form method="post" action="sendemail.php" id="contact-form">
+                    <div class="row clearfix">
+
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                            <div class="group-inner">
+                                <label class="icon-label" for="field-one"><span class="fa flaticon-social"></span></label>
+                                <input id="field-one" type="text" name="username" placeholder="Nom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                            <div class="group-inner">
+                                <label class="icon-label" for="field-two"><span class="fa flaticon-envelope-2"></span></label>
+                                <input id="field-two" type="text" name="prenom" placeholder="Prenom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                            <div class="group-inner">
+                                <label class="icon-label" for="field-two"><span class="fa flaticon-envelope-2"></span></label>
+                                <input id="field-tree" type="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                            <div class="group-inner">
+                                <label class="icon-label" for="field-two"><span class="fa flaticon-phone"></span></label>
+                                <input id="field" type="email" name="text" placeholder="Téléphone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <textarea class="darma" name="message" placeholder="Message"></textarea>
+                        </div>
+
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button class="theme-btn btn-style-one" type="submit" name="submit-form">Envoyer </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <!--End Comment Form -->
+
+        </div>
+    </div>
+    <!--End Contact Form-->
+
+
+{% endblock %}
+
