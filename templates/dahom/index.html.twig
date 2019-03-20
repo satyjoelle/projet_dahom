@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
 <!--Main Slider-->
+{% for tab in tabs %}
 <section class="main-slider" data-start-height="500" data-slide-overlay="yes">
 
     <div class="tp-banner-container">
@@ -58,8 +58,8 @@
 
                 </li>
 
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="images/main-slider/2.png"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/{{ asset('2.png') }}"  data-saveperformance="off"  data-title="Awesome Title Here">
+                    <img src="images/main-slider/{{ asset('2.png') }}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                     <div class="tp-caption sft sfb tp-resizeme"
                          data-x="center" data-hoffset="0"
@@ -73,7 +73,7 @@
                          data-endelementdelay="0.3"
                          data-endspeed="1200"
                          data-endeasing="Power4.easeIn">
-                        <div class="text">Sécurité des sites </div>
+                        <div class="text">{{ tab.getSlideSmalltilte() }} </div>
                     </div>
 
                     <div class="tp-caption sft sfb tp-resizeme text-center"
@@ -88,7 +88,7 @@
                          data-endelementdelay="0.3"
                          data-endspeed="1200"
                          data-endeasing="Power4.easeIn">
-                        <h2>Surveillance  <br> de chantiers de construction </h2>
+                        <h2>{{ tab.getSlideBigtitle ()  }}  </h2>
                     </div>
 
                     <div class="tp-caption sft sfb tp-resizeme"
@@ -123,8 +123,8 @@
 
                 </li>
 
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/3.png"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="images/main-slider/3.png"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/{{ asset('3.png') }}"  data-saveperformance="off"  data-title="Awesome Title Here">
+                    <img src="images/main-slider/{{ asset('3.png') }}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                     <div class="tp-caption sft sfb tp-resizeme"
                          data-x="center" data-hoffset="0"
@@ -180,7 +180,6 @@
     </div>
 </section>
 <!--End Main Slider-->
-
 <!--Inquiry Form-->
 <section class="inquiry-section wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
     <div class="auto-container">
@@ -249,7 +248,7 @@
     <div class="auto-container">
         <!--Sec Title-->
         <div class="sec-title">
-            <h2>Nos Defis </h2>
+            <h2>{{ tab.getDefisTitle() }} </h2>
 
         </div>
 
@@ -267,14 +266,8 @@
                             <div class="icon-box">
                                 <span class="icon flaticon-policeman-1"></span>
                             </div>
-                            <h3><a href="services-single.html">LES VALEURS CLES CHEZ DAHOM PROTECTION ET SERVICES</a></h3>
-                            <div class="text">Les Hommes, la passion, le respect, l’anticipation l’écoute et la satisfaction de nos clients.
-
-                                Nos collaborateurs travaillent chaque instant et avec passion, pour répondre aux besoins de nos clients... 1-Les Hommes
-                                2-La passion
-                                3-Le respect
-                                4-L’anticipation
-                                5-L’écoute</div>
+                            <h3><a href="services-single.html">{{ tab.getLabellDefis1() }} </a></h3>
+                            <div class="text">{{ tab.getTextDefis1() }}</div>
                         </div>
                     </div>
 
@@ -284,9 +277,8 @@
                             <div class="icon-box">
                                 <span class="icon flaticon-walkie-talkie"></span>
                             </div>
-                            <h3><a href="services-single.html">NOS PRIORITES </a></h3>
-                            <div class="text">  Être reconnu comme la référence de la protection des biens et des personnes.
-                                Être à la hauteur de nos engagements face aux nouvelles menaces liées à l’insécurité.</div>
+                            <h3><a href="services-single.html">{{ tab.getLabellDefis2() }}  </a></h3>
+                            <div class="text">  {{ tab.getTextDefis2() }}</div>
                         </div>
                     </div>
 
@@ -300,12 +292,8 @@
                             <div class="icon-box">
                                 <span class="icon flaticon-eye"></span>
                             </div>
-                            <h3><a href="services-single.html">DES ATOUTS QUI FONT NOTRE FORCE ET NOTRE DIFFÉRENCE</a></h3>
-                            <div class="text">Nos collaborateurs
-                                Leur expérience
-                                Leur formation
-                                Leur réactivité et professionnalisme
-                                Notre middle management</div>
+                            <h3><a href="services-single.html">{{ tab.getLabellDefis3() }}</a></h3>
+                            <div class="text"> {{ tab.getTextDefis3() }}  </div>
                         </div>
                     </div>
 
@@ -318,8 +306,8 @@
                             <div class="icon-box">
                                 <span class="icon flaticon-danger"></span>
                             </div>
-                            <h3><a href="services-single.html"> ACCUEIL ET MULTI-SERVICES</a></h3>
-                            <div class="text"> Nous développons actuellement une offre de multi-services au sein de Dahom protection et services. Les hôtesses, hôtes, assurent des prestations d’accueil et d’orientation vers les services concernés, de logistique, gestion du courrier et services généraux. Ils travaillent, selon les besoins, en coordination avec les équipes de sûreté et sécurité des sites.</div>
+                            <h3><a href="services-single.html"> {{ tab.getLabellDefis4() }}</a></h3>
+                            <div class="text"> {{ tab.getTextDefis4() }} </div>
                         </div>
                     </div>
 
@@ -328,7 +316,11 @@
                 <!--Image Column-->
                 <div class="image-column col-md-4 col-sm-12 col-xs-12">
                     <figure class="image-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <img src="images/resource/police-man.png" alt="" />
+
+
+
+
+                            <img src="images/resource/police-man.png" {{ asset('police-man.png') }}"alt="" />
                     </figure>
                 </div>
 
@@ -344,7 +336,7 @@
     <div class="auto-container">
         <!--Sec Title Two-->
         <div class="sec-title-two">
-            <h2>Notre Accompagnement </h2>
+            <h2>{{ tab.getAccTitle() }} </h2>
 
         </div>
         <!--End Sec Title Two-->
@@ -355,14 +347,14 @@
             <div class="advantage-block col-md-4 col-sm-6 col-xs-12">
                 <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <figure class="image-box">
-                        <a href="services-single.html"><img src="images/resource/adventure-1.jpg" alt="" /></a>
+
+                        <a href="services-single.html"><img src="images/resource/adventure-1.jpg"{{ asset('adventure-1.jpg')}}alt="" /></a>
                         <div class="icon-box"><span class="icon flaticon-headphones-1"></span></div>
                     </figure>
                     <div class="lower-content">
                         <div class="inner">
-                            <h3><a href="services-single.html">Agent de prévention </a></h3>
-                            <div class="text"> Notre entreprise de sécurité met à votre disposition un agent de sécurité pour effectuer des missions de surveillance et de gardiennage afin de protéger les personnes et les biens.
-                                Nos agents sont titulaires de diplômes ainsi que de la carte professionnelle obligatoire délivrée par le CNAPS après une enquête de moralité.</div>
+                            <h3><a href="services-single.html">{{ tab.getAccTitle1() }}</a></h3>
+                            <div class="text">{{ tab.getAccText1() }}</div>
                             <a class="read-more" href="services-single.html">Lire plus <span class="icon fa fa-arrow-right"></span></a>
                         </div>
                     </div>
@@ -373,15 +365,15 @@
             <div class="advantage-block col-md-4 col-sm-6 col-xs-12">
                 <div class="inner-box wow fadeIn" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <figure class="image-box">
-                        <a href="services-single.html"><img src="images/resource/dahom-securite4.png" alt="" /></a>
+
+
+                            <a href="services-single.html"><img src="images/resource/{{ asset('dahom-securite4.png')}}" alt="" /></a>
                         <div class="icon-box"><span class="icon flaticon-star"></span></div>
                     </figure>
                     <div class="lower-content">
                         <div class="inner">
-                            <h3><a href="services-single.html">Agent de Sécurité incendie </a></h3>
-                            <div class="text">Protéger vos installations contre l'incendie et prévenir les accidents professionnels
-                                Ils ont pour missions d’assurer la protection de vos biens, de vos immeubles ainsi que la sécurité de leurs occupants par :
-                                La prévention des incendies ; La sensibilisation des employés en matière de sécurité contre l'incendie</div>
+                            <h3><a href="services-single.html">{{ tab.getAccTitle2() }} </a></h3>
+                            <div class="text">{{ tab.getAccText2() }}</div>
                             <a class="read-more" href="services-single.html">Lire plus  <span class="icon fa fa-arrow-right"></span></a>
                         </div>
                     </div>
@@ -392,16 +384,13 @@
             <div class="advantage-block col-md-4 col-sm-6 col-xs-12">
                 <div class="inner-box wow fadeIn" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <figure class="image-box">
-                        <a href="services-single.html"><img src="images/resource/dahom-securite5.png" alt="" /></a>
+                        <a href="services-single.html"><img src="images/resource/dahom-securite5.png"{{ asset('dahom-securite5.png')}} alt="" /></a>
                         <div class="icon-box"><span class="icon flaticon-close"></span></div>
                     </figure>
                     <div class="lower-content">
                         <div class="inner">
-                            <h3><a href="services-single.html">Agent maître chien </a></h3>
-                            <div class="text"> Leurs qualités :
-                                Sang-froid – expérience et professionnalisme
-                                Nos agents conducteurs de chien et leur berger forment un tandem expérimenté et très efficace
-                                pour assurer la protection des biens et/ou des personnes en utilisant les qualités combinées du conducteur et du chien pour vos sites par :</div>
+                            <h3><a href="services-single.html">{{ tab.getAccTitle3() }}</a></h3>
+                            <div class="text">{{ tab.getAccText3() }}</div>
                             <a class="read-more" href="services-single.html">Lire plus <span class="icon fa fa-arrow-right"></span></a>
                         </div>
                     </div>
@@ -512,7 +501,7 @@
             <div class="content-column col-md-6 col-sm-12 col-xs-12">
                 <!--Sec Title Three-->
                 <div class="sec-title-three">
-                    <h2>Pourquoi nous choisir </h2>
+                    <h2>{{ tab.getChoisirTitle() }}</h2>
                 </div>
                 <!--End Sec Title Three-->
 
@@ -522,8 +511,8 @@
                         <div class="icon-box">
                             <span class="icon flaticon-hourglass"></span>
                         </div>
-                        <h3><a href="services-single.html">2 ans d'expériences </a></h3>
-                        <div class="text">The Love Boat promises something for every the beat of very best to make the others comfortable.</div>
+                        <h3><a href="services-single.html">{{ tab.getChoisirSmalltitle1() }} </a></h3>
+                        <div class="text"> {{ tab.getChoisirText1() }}</div>
                     </div>
                 </div>
 
@@ -533,8 +522,8 @@
                         <div class="icon-box">
                             <span class="icon flaticon-light-bulb-on"></span>
                         </div>
-                        <h3><a href="services-single.html">Une équipe d'experts </a></h3>
-                        <div class="text">The Love Boat promises something for every the beat of  very best to make the others comfortable.</div>
+                        <h3><a href="services-single.html">{{ tab.getChoisirSmalltitle2() }}</a></h3>
+                        <div class="text">{{ tab.getChoisirText2() }}</div>
                     </div>
                 </div>
 
@@ -544,8 +533,8 @@
                         <div class="icon-box">
                             <span class="icon flaticon-anchor-1"></span>
                         </div>
-                        <h3><a href="services-single.html">Une maîtrise du métier </a></h3>
-                        <div class="text">The Love Boat promises something for every the beat of  very best to make the others comfortable.</div>
+                        <h3><a href="services-single.html">{{ tab.getChoisirSmalltitle3() }} </a></h3>
+                        <div class="text">{{ tab.getChoisirText3() }}</div>
                     </div>
                 </div>
 
@@ -633,6 +622,7 @@
         </div>
     </section>
     <!--sponsors style One-->
+    {% endfor %}
 
     {% endblock %}
 

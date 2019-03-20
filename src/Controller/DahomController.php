@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Accueil;
 
 class DahomController extends AbstractController
 {
@@ -14,8 +15,12 @@ class DahomController extends AbstractController
 
     public function homepage()
     {
+        $em = $this->getDoctrine()->getManager();
+        $tabs = $em->getRepository(Accueil::class)->findAll();
+
         //return new Response('OMG! My first page already! WOOO!');
         return $this->render('dahom/index.html.twig', [
+            'tabs'=>$tabs
         ]);
     }
 
