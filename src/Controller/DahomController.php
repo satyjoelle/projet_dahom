@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Dahom;
+use App\Entity\Services;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,8 +32,12 @@ class DahomController extends AbstractController
 
     public function aboutus()
     {
+        $em = $this->getDoctrine()->getManager();
+        $tabsdahom = $em->getRepository(Dahom::class)->findAll();
+        //dump($tabsdahom); die();
         //return new Response('OMG! My first page already! WOOO!');
         return $this->render('dahom/about.html.twig', [
+            'tabsdahom'=>$tabsdahom
         ]);
     }
 
@@ -41,8 +47,12 @@ class DahomController extends AbstractController
 
     public function services()
     {
+        $em = $this->getDoctrine()->getManager();
+        $tabsservices = $em->getRepository(Services::class)->findAll();
+        //dump($tabsservices); die();
         //return new Response('OMG! My first page already! WOOO!');
         return $this->render('dahom/services.html.twig', [
+            'tabsservices'=>$tabsservices
         ]);
     }
 

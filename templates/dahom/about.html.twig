@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+   {# {{ dump(tabsdahom) }}#}
+    {% for tab in tabsdahom %}
 
-    <section class="page-title" style="background-image:url(images/background/6.png);">
+    <section class="page-title" style="background-image:url('images/background{{ asset(tab.getBanniere1() ) }}');">
         <div class="auto-container">
             <div class="inner-box">
-                <h1>A propos de nous </h1>
+                <h1>{{ tab.getBanniereBigtitle() }} </h1>
                 <div class="bread-crumb"><a href="index.html">Dahom &nbsp; /</a> <a class="current">A propos de nous </a></div>
             </div>
         </div>
@@ -20,9 +22,8 @@
                 <!--Content Column / Fact Counter Two-->
                 <div class="content-column col-md-6 col-sm-12 col-xs-12">
                     <div class="inner-box">
-                        <h3>Bienvenue chez DAHOM </h3>
-                        <div class="text"> Dahom protection et services est né de la volonté de monsieur Arsène Chakoun diplômé de	l’Université Paris Descartes en sécurité des biens et des personnes. Un homme très	ambitieux qui, après un diplôme de créateur d’entreprise au centre national de création	d’entreprise au conservatoire national des arts et métiers, poursuit des études plus	poussées dans le domaine de la sécurité privée à l’université Paris Descartes où il obtient	après la licence « sécurité des biens et des personnes » et le diplôme d’université « sécurité-	sureté dans l’espace ouvert au public », réussit à mettre en place Dahom protection et services qui se veut une entreprise privée de sécurité qui met au cœur de ses	préoccupations, la satisfaction du client, un middle management plus efficace et une	attention particulière sur la qualité de la formation de ses collaborateurs ainsi que leur sens	de service</div>
-
+                        <h3>{{ tab.getBienvenueTitle() }}</h3>
+                        <div class="text"> {{ tab.getBienvenueText() }} </div>
                         <!--Fact Counter Two-->
                         <div class="fact-counter">
                             <div class="clearfix">
@@ -69,7 +70,7 @@
                 <div class="column col-md-6 col-sm-12 col-xs-12">
                     <div class="video-box">
                         <figure class="image">
-                            <img src="images/resource/team.jpg" alt="">
+                            <img src="images/resource/team.jpg" {{ asset(tab.getBanniere1() ) }}')alt="">
                         </figure>
                         <!---<a href="https://www.youtube.com/watch?v=0e1uTwSRGgI" class="lightbox-image overlay-box">-->
                         <span class="flaticon-arrows-2"></span>
@@ -337,6 +338,8 @@
 </div>
 </section>
 <!--sponsors style One-->
+
+    {% endfor %}
 
     {% endblock %}
 
